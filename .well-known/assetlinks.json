@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "red.lilu.outmap",
+      "sha256_cert_fingerprints": [
+        "CD:C5:31:90:BF:FF:C7:6D:82:06:41:E8:DF:7D:1B:19:04:A3:D4:D4:48:62:4A:30:8D:15:BD:2C:28:C1:63:AE"
+      ]
+    }
+  }
+]
