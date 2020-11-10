@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
     for (let article of document.body.querySelectorAll('article > article')) {
       let ui = document.createElement('p');
       ui.classList.add('weixin');
-      ui.textContent = `提醒：没交过路费，微信不让下载。请先点右上角的三点，再点“在浏览器打开”！`;
+      ui.textContent = `因为没给微信交钱，部分功能惨遭屏蔽。请返回聊天界面，复制网址后到浏览器中打开。`;
       article.insertBefore(
           ui,
           article.querySelector('div.version').nextSibling
