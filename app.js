@@ -14,9 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (group != null) {
     let ui = document.createElement('p');
     ui.classList.add('tip');
-    ui.innerHTML = `<p>下载安装后有两种方式加入队伍：</p>
-    <p>1. 打开应用点“队”按钮，输入队伍名称：<b>${group}</b></p>
-    <p>2. <a href="app://red.lilu.outmap/group=${group}">点我自动打开</a>（仅在较新安卓手机中有效）</p>`;
+    ui.innerHTML = `请点右上角红色按钮下载安装，打开应用后点“队”按钮，输入队伍名称：<b>${group}</b> 加入队伍。`;
     let article = document.body.querySelector('article#outmap > article');
     article.insertBefore(
       ui,
@@ -29,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (from_autotracks != null) {
     let ui = document.createElement('p');
     ui.classList.add('tip');
-    ui.textContent = `行车轨迹用户你好！行车轨迹中为你提供功能的服务陆续收费，已经无法使用分享（轨迹号）功能。作为免费应用，维护代价很高，我会继续努力。感谢你的选择，请安装外图轨迹，导入行车轨迹备份。`;
+    ui.textContent = `行车轨迹用户你好！行车轨迹中为你提供功能的各种免费服务都开始收费了，已经无法使用分享（轨迹号）功能。作为免费应用，维护代价很高，我会继续努力。感谢你的选择，请安装外图轨迹，导入行车轨迹备份。`;
     let article = document.body.querySelector('article#outmap > article');
     article.insertBefore(
       ui,
