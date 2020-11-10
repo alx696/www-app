@@ -25,6 +25,11 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Noto Serif CJK SC", "Noto Sans CJK SC", sans-serif;
@@ -140,7 +145,28 @@ body > footer {
   color: white;
 }
 
-.weixin {
+#weixin {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#weixin>article {
   padding: 1rem;
-  background-color: yellow;
+}
+
+#weixin>article p {
+  margin: 0.5rem 0;
+}
+
+#weixin>article textarea {
+  box-sizing: border-box;
+  width: 100%;
 }

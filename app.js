@@ -19,8 +19,8 @@ window.addEventListener('DOMContentLoaded', () => {
     <p>2. <a href="app://red.lilu.outmap/group=${group}">点我自动打开</a>（仅在较新安卓手机中有效）</p>`;
     let article = document.body.querySelector('article#outmap > article');
     article.insertBefore(
-        ui,
-        article.querySelector('div.version').nextSibling
+      ui,
+      article.querySelector('div.version').nextSibling
     );
   }
 
@@ -32,8 +32,8 @@ window.addEventListener('DOMContentLoaded', () => {
     ui.textContent = `行车轨迹用户你好！行车轨迹中为你提供功能的服务陆续收费，已经无法使用分享（轨迹号）功能。作为免费应用，维护代价很高，我会继续努力。感谢你的选择，请安装外图轨迹，导入行车轨迹备份。`;
     let article = document.body.querySelector('article#outmap > article');
     article.insertBefore(
-        ui,
-        article.querySelector('div.version').nextSibling
+      ui,
+      article.querySelector('div.version').nextSibling
     );
   }
 
@@ -45,23 +45,27 @@ window.addEventListener('DOMContentLoaded', () => {
     ui.textContent = `应用已经改名为外图轨迹！`;
     let article = document.body.querySelector('article#outmap > article');
     article.insertBefore(
-        ui,
-        article.querySelector('div.version').nextSibling
+      ui,
+      article.querySelector('div.version').nextSibling
     );
   }
 
   //如果是微信提醒用户在浏览器打开
   if (navigator.userAgent.includes('MicroMessenger')) {
-    for (let article of document.body.querySelectorAll('article > article')) {
-      let ui = document.createElement('p');
-      ui.classList.add('weixin');
-      ui.textContent = `因为没给微信交钱，部分功能惨遭屏蔽。请返回聊天界面，复制网址后到浏览器中打开。`;
-      article.insertBefore(
-          ui,
-          article.querySelector('div.version').nextSibling
-      );
-      //隐藏下载按钮
-      article.querySelector('div.version > a').style.display = 'none';
-    }
+    document.body.innerHTML = `<div id="weixin">
+        <article>
+          <h3>感谢你的信任</h3>
+          <p>非微信官方网页——没给微信交钱的网页。</p>
+          <p>纵使你选择了继续访问，但微信还是没打算放弃拦路！我的功能已被阉割，请您复制下方网址，到浏览器中打开，谢谢！</p>
+          <p>
+            <textarea>${window.location.href}</textarea>
+          </p>
+        </article>
+      </div>`;
+    document.body.querySelector('textarea')
+      .addEventListener('click', e => {
+        e.target.select();
+        document.execCommand("copy");
+      });
   }
 });
