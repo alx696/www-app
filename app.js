@@ -68,12 +68,9 @@ window.addEventListener('DOMContentLoaded', () => {
         e.target.select();
         document.execCommand("copy");
 
-        let p = document.createElement('p');
-        p.textContent = '网址已经复制，请到浏览器中粘贴打开^^';
-        e.target.parentElement.parentElement.insertBefore(
-          p,
-          e.target.parentElement
-        );
+        const tip = document.body.querySelector('#weixin>p:nth-child(3)');
+        tip.textContent = '网址已经复制，请到浏览器中粘贴打开^^';
+        tip.style.color = 'green';
       });
   }
 });
