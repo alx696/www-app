@@ -56,7 +56,8 @@ window.addEventListener('DOMContentLoaded', () => {
         <article>
           <h3>感谢你的信任</h3>
           <p>非微信官方网页——没给微信交钱的网页。</p>
-          <p>纵使你选择了继续访问，但微信还是没打算放弃拦路！我的功能已被阉割，请您复制下方网址，到浏览器中打开，谢谢！</p>
+          <p>纵使你选择了继续访问，但微信还是没打算放弃拦路！我的功能已被阉割，无法正常显示。</p>
+          <p>请点一下白色方框，复制网址后到浏览器中粘贴打开，谢谢！</p>
           <p>
             <textarea>${window.location.href}</textarea>
           </p>
@@ -66,6 +67,13 @@ window.addEventListener('DOMContentLoaded', () => {
       .addEventListener('click', e => {
         e.target.select();
         document.execCommand("copy");
+
+        let p = document.createElement('p');
+        p.textContent = '网址已经复制，请到浏览器中粘贴打开^^';
+        e.target.parentElement.parentElement.insertBefore(
+          p,
+          e.target.parentElement
+        );
       });
   }
 });
