@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', () => {
         e.target.select();
         document.execCommand("copy");
 
-        const tip = document.body.querySelector('#weixin>article>p:nth-child(3)');
+        const tip = document.body.querySelector('#weixin>article>p:nth-child(4)');
         tip.textContent = '网址已经复制，请到浏览器中粘贴打开^^';
         tip.style.color = 'green';
       });
