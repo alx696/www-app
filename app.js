@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (group != null) {
     let ui = document.createElement('p');
     ui.classList.add('tip');
-    ui.innerHTML = `请点右上角红色按钮下载安装，打开应用后点“队”按钮，输入队伍名称：<b>${group}</b> 加入队伍。`;
+    ui.innerHTML = `请点右上角红色按钮下载安装，打开应用后点“队”按钮，输入队伍名称：<br><b>${group}</b><br>加入队伍。`;
     let article = document.body.querySelector('article#outmap > article');
     article.insertBefore(
       ui,
